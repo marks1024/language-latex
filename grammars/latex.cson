@@ -1232,13 +1232,8 @@
          'name': 'punctuation.definition.arguments.end.latex'
      'end': '(?:\\s*)(\\\\end)(\\{)(lstlisting)(\\})'
      'name': 'meta.embedded.block.source'
-     'comment': 'default code listing for js so that dollar sign does not mess up subsequent parsing'
-     'contentName': 'source.embedded.java'
-     'patterns': [
-       {
-         'include': 'source.java'
-       }
-     ]
+     'comment': 'default code listing for so that dollar sign does not mess up subsequent parsing'
+     'contentName': 'markup.raw.verbatim.latex'
   }
   {
     'begin': '(?:\\s*)(\\\\begin)(\\{)(lstlisting)(\\})(\\[)(?:.*\\blanguage\\s*=\\s*Java\\b.*)(\\])'
