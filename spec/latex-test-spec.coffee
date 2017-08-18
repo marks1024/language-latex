@@ -1,5 +1,7 @@
 describe "latex grammar", ->
    grammar = null
+   preamble = '\\documentclass{article} \\begin{document}'
+   afterword = '\\end{document}'
 
    beforeEach ->
       waitsForPromise ->
@@ -13,6 +15,11 @@ describe "latex grammar", ->
       expect(grammar.scopeName).toBe 'text.tex.latex'
 
    it "parses a simple article", ->
-      s = '\\documentclass{article} \\begin{document} Hello, Latex! $2+3=5$ \\end{document}'
+      s = "#{preamble} Hello, Latex! $2+3=5$ #{afterword}"
       tk = grammar.tokenizeLines(s)
       expect(tk[0][14].scopes[1]).toBe 'string.other.math.tex'
+
+   it "gets the language correct (python)", ->
+      s = '\\begin{lstlisting}[language=Python] import numpy as np \\end{lstlisting}'
+      tk = grammar.tokenizeLines("#{preamble} #{s} #{afterword}")
+      expect(tk[0][19].scopes[2]).toBe 'source.embedded.python'
