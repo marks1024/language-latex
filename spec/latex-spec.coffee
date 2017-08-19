@@ -18,8 +18,3 @@ describe "latex grammar", ->
       s = "#{preamble} Hello, Latex! $2+3=5$ #{afterword}"
       tk = grammar.tokenizeLines(s)
       expect(tk[0][14].scopes[1]).toBe 'string.other.math.tex'
-
-   it "gets the language correct (python)", ->
-      s = '\\begin{lstlisting}[language=Python] import numpy as np \\end{lstlisting}'
-      tk = grammar.tokenizeLines("#{preamble} #{s} #{afterword}")
-      expect(tk[0][19].scopes[2]).toBe 'source.embedded.python'

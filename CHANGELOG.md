@@ -1,3 +1,4 @@
+- Add spec for the latex grammar
 
 ## 1.1.0
 
@@ -6,7 +7,6 @@
 - Several file extensions are interpreted as LaTeX file ([#81](https://github.com/area/language-latex/pull/81), [#82](https://github.com/area/language-latex/pull/82), and
 [#126](https://github.com/area/language-latex/pull/126))
 - Support for highlighting long lines ([#131](https://github.com/area/language-latex/pull/131))
-- Added spec
 
 #### Fixed
 - Fix plural forms for cite commands (#14)
